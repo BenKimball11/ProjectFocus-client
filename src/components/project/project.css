@@ -1,0 +1,42 @@
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .projectCard {
+      flex-basis: 28%;
+      margin: 1em;
+      padding: 1em;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 1rem;
+      font-weight: bold;
+  }
+  .projectForm__title {
+    display: flex;
+          justify-content: center;
+          color: rgb(255, 255, 255);
+          text-shadow: black;
+  }
+
+  .form-group {
+
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+ 
+  }
+
+  
+
+  .ProjectForm {
+    padding: 100px;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+    max-width: 100%;
+    margin: auto;
+  }
+  .ProjectSaveButton {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }

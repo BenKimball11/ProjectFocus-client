@@ -7,18 +7,28 @@ import { Register } from "./auth/Register"
 
 export const ProjectFocus = () => (
     <>
-        <Route render={() => {
-            if (localStorage.getItem("PF_token")) {
-                return <>
-                    <Route render={NavBar} />
-                    <Route render={props => <ApplicationViews {...props} />} />
-                </>
-            } else {
-                return <Redirect to="/login" />
-            }
-        }} />
-
-        <Route path="/login" render={Login} />
-        <Route path="/register" render={Register} />
+      <Route
+        render={() => {
+          if (localStorage.getItem("PF_token")) {
+            return (
+              <>
+                <h2 className="ProjectFocus">Project Focus</h2>
+                <NavBar />   
+                <ApplicationViews />
+              </>
+            );
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+  
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/register">
+        <Register />
+      </Route>
     </>
-)
+  );
+  

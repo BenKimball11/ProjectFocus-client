@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 //import "./Auth.css"
+import { useParams, useHistory } from "react-router-dom";
 
 export const Register = (props) => {
     const firstName = React.createRef()
@@ -9,6 +10,8 @@ export const Register = (props) => {
     const password = React.createRef()
     const verifyPassword = React.createRef()
     const passwordDialog = React.createRef()
+
+    const history = useHistory()
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -34,7 +37,7 @@ export const Register = (props) => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("PF_token", res.token)
-                        props.history.push("/")
+                        history.push("/lots")
                     }
                 })
         } else {

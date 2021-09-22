@@ -1,0 +1,78 @@
+.lots {
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: center;
+  }
+  
+  /* .lot {
+    flex-basis: 28%;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid goldenrod;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  } */
+  
+  .lot {
+    margin: 1em;
+    border: 2px solid rgb(0, 107, 84);
+    /* box-shadow:    3px 3px 3px 3px rgb(125, 168, 159); */
+    flex-basis: 15%;
+    border-radius: 20px;
+    background-color: rgb(62, 61, 61);
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    padding: 1em;
+    border: rgb(245, 247, 216) solid 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.19)
+  }
+      .lotHeader {
+          display: flex;
+          justify-content: center;
+          color: rgb(255, 255, 255);
+          text-shadow: black;
+      
+      }
+  
+      .addButton {
+        display: flex;
+        justify-content: center;
+      }
+  
+      .lotMake {
+        display: flex;
+        justify-content: center;
+      }
+      .lotDetailButton {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+  
+/*       body {
+        background: url(background1.jpeg) no-repeat center center fixed; 
+        
+      } */
+  .lotForm__title {
+    display: flex;
+          justify-content: center;
+          color: rgb(255, 255, 255);
+          text-shadow: black;
+      
+  }
+  
+  .lotForm {
+    padding: 150px;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+    max-width: 50%;
+    margin: auto;
+  }
+  .lotSaveButton {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
