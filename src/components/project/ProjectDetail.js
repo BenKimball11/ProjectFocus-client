@@ -32,12 +32,12 @@ export const ProjectDetail = () => {
     //vehicleId is being watched in the useEffect
 }, [projectId]) // 1 do i need vehicleId in here?
 
-/* const projectNoteDelete = (lotId) => {
+const projectNoteDelete = (lotId) => {
   deleteProjectNote(lotId)
     .then(() => {
       refreshProject()
     })
-} */
+}
 
 
 const refreshProject = () => {
@@ -72,18 +72,18 @@ const refreshProject = () => {
       {
         project.project_notes?.map(projectNote => 
           <section className="noteCard">
-    <h3 className="note__name">{projectNote.note.name}</h3>  
+    <h3 className="note__name">Note: {projectNote.name}</h3>  
    
 
-        <div className="note__date">Date: {projectNote.note.date }</div>
-        <div className="note__itemsReceived">Items Received: {projectNote.note.itemsReceived }</div>
-        <div className="note__description">description: {projectNote.note.description }</div>
-        <div className="note__contactNumber">Contact Number: {projectNote.note.contactNumber }</div>
+        <div className="note__date">Date: {projectNote.date }</div>
+        <div className="note__itemsReceived">Items Received: {projectNote.itemsReceived }</div>
+        <div className="note__description">description: {projectNote.description }</div>
+        <div className="note__contactNumber">Contact Number: {projectNote.contactNumber }</div>
 
-        {/* <button className="deleteBtn"
+       <button className="deleteBtn"
           onClick={() => projectNoteDelete(projectNote.id)}>
           Remove note
-      </button>  */}     
+      </button>       
           <button className='edit' onClick={() => {
           history.push(`/projectnotes/edit/${projectNote.id}`)
         }}>Edit</button>

@@ -21,7 +21,7 @@ export const LotNoteProvider = (props) => {
 	};
 
     const getLotNoteById = lotNoteId => {
-        return fetch(`http://localhost:8000/notes/${lotNoteId}`, {
+        return fetch(`http://localhost:8000/lotnotes/${lotNoteId}`, {
             headers: {
                 Authorization: `Token ${localStorage.getItem("PF_token")}`
             }
@@ -30,8 +30,8 @@ export const LotNoteProvider = (props) => {
     }
 
     //uses the add maintenance form to add a new event to the DB
-    const addNote = (lotNoteObj) => {
-        return fetch("http://localhost:8000/notes", {
+    const addLotNote = (lotNoteObj) => {
+        return fetch("http://localhost:8000/lotnotes", {
             method: "POST",
             headers: {
                 Authorization: `Token ${localStorage.getItem("PF_token")}`,
@@ -56,8 +56,8 @@ export const LotNoteProvider = (props) => {
             .then(getLotNotes)
     }
     //uses the event ID to delete the event from the DB
-    const deleteLotNote = noteId => {
-        return fetch(`http://localhost:8000/notes/${noteId}`, {
+    const deleteLotNote = lotNoteId => {
+        return fetch(`http://localhost:8000/lotnotes/${lotNoteId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export const LotNoteProvider = (props) => {
     // exports the function fetch calls via MaitenanceContext to be used throughout the modules
     return (
         <LotNoteContext.Provider value={{
-            lotNotes, getLotNotes, addNote, getLotNoteById, updateLotNote, deleteLotNote
+            lotNotes, getLotNotes, addLotNote, getLotNoteById, updateLotNote, deleteLotNote
         }}>
             {props.children}
         </LotNoteContext.Provider>

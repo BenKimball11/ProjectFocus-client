@@ -31,23 +31,22 @@ export const ProjectNoteForm = () => {
       }
     
     const handleSaveProjectNote = () => {
-    const user = localStorage.getItem("PF_token")
+    //const user = localStorage.getItem("PF_token")
 
       if (projectNoteId){
         updateProjectNote({
-          id: parseInt(projectNote.id),
-          projectId: parseInt(projectNote.projectId),
+          id: projectNote.id,
+          //projectId: parseInt(projectNote.projectId),
           name: projectNote.name,
           date: projectNote.date,
           itemsReceived: projectNote.itemsReceived,
           description: projectNote.description,
           contactNumber: parseInt(projectNote.contactNumber),
         })
-        .then(() => history.push(`/projects/detail/${projectNote.project.id}`))
+        .then(() => history.push(`/lots`))
       }else{ 
         addProjectNote({         
           projectId: parseInt(projectId),
-          //noteId: parseInt(noteId),
           name: projectNote.name,
           date: projectNote.date,
           itemsReceived: projectNote.itemsReceived,

@@ -31,7 +31,7 @@ export const ProjectNoteProvider = (props) => {
 
     //uses the add maintenance form to add a new event to the DB
     const addProjectNote = projectNoteObj => {
-        return fetch("http://localhost:8000/notes", {
+        return fetch("http://localhost:8000/projectnotes", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export const ProjectNoteProvider = (props) => {
     }
     //uses the event ID to delete the event from the DB
     const deleteProjectNote = projectNoteId => {
-        return fetch(`http://localhost:8088/projectnotes/${projectNoteId}`, {
+        return fetch(`http://localhost:8000/projectnotes/${projectNoteId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

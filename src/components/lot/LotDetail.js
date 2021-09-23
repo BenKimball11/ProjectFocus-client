@@ -62,11 +62,11 @@ const refreshLot = () => {
         Edit
       </button>
       <h3 className="lot__lotNumber"> Lot Number {lot.lotNumber}</h3>
-      <div className="lot__size">Size: {lot.lotSize}</div>
+      <div className="lot__size">Size: {lot.lotSize} acres</div>
 
      
       <button className='add__note' onClick={() => {
-          history.push(`/notes/lot/create/${lot.id}`)
+          history.push(`/lotnotes/create/${lot.id}`)
         }}>Add Note</button>
 
       <button className='add__project' onClick={() => {
@@ -75,22 +75,22 @@ const refreshLot = () => {
 
 <div className="noteCards">
       {
-        lot.lot_notes?.map(lotNote => 
+        lot.lot_lot_notes?.map(lotNote => 
           <section className="noteCard">
-    <h3 className="note__name">Note: {lotNote.note.name}</h3>  
+    <h3 className="note__name">Note: {lotNote.name}</h3>  
    
 
-        <div className="note__date">Date: {lotNote.note.date }</div>
-        <div className="note__itemsReceived">Items Received: {lotNote.note.itemsReceived }</div>
-        <div className="note__description">description: {lotNote.note.description }</div>
-        <div className="note__contactNumber">Contact Number: {lotNote.note.contactNumber }</div>
+        <div className="note__date">Date: {lotNote.date }</div>
+        <div className="note__itemsReceived">Items Received: {lotNote.itemsReceived }</div>
+        <div className="note__description">description: {lotNote.description }</div>
+        <div className="note__contactNumber">Contact Number: {lotNote.contactNumber }</div>
 
         <button className="deleteBtn"
           onClick={() => lotNoteDelete(lotNote.id)}>
           Remove note
       </button>      
           <button className='edit' onClick={() => {
-          history.push(`/notes/edit/${lotNote.id}`)
+          history.push(`/lotnotes/edit/${lotNote.id}`)
         }}>Edit</button>
 
        {/*  <section className="projectCard">

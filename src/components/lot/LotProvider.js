@@ -1,51 +1,3 @@
-/* import React, { useState } from "react";
-
-export const LotContext = React.createContext();
-
-export const LotProvider = (props) => {
-	const [lots, setLots] = useState([]);
-	//const [gameTypes, setTypes] = useState([]);
-
-	const getLots = () => {
-		return fetch("http://localhost:8000/lots", {
-			headers: {
-				Authorization: `Token ${localStorage.getItem("PF_token")}`,
-			},
-		})
-			.then((response) => response.json())
-			.then(setLots);
-	};
-
-	const addLot = (lot) => {
-		return fetch("http://localhost:8000/lots", {
-			method: "POST",
-			headers: {
-				Authorization: `Token ${localStorage.getItem("PF_token")}`,
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(lot),
-		}).then(getLots);
-	};
-
-	/* const getGameTypes = () => {
-		return fetch("http://localhost:8000/gametypes", {
-			headers: {
-				Authorization: `Token ${localStorage.getItem("PF_token")}`,
-			},
-		})
-			.then((response) => response.json())
-			.then(setTypes);
-	};
- 
-	return (
-		<LotContext.Provider
-			value={{ lots, getLots, addLot }}
-		>
-			{props.children}
-		</LotContext.Provider>
-	);
-}; */
-
 import React, { useState, createContext } from "react"
 
 
@@ -67,7 +19,7 @@ export const LotProvider = (props) => {
 				"Content-Type": "application/json",
 			},
 		})
-			.then((response) => response.json())
+			.then((response) => response.json()) //take the response and converts 
 			.then(setLots);
 	};
 

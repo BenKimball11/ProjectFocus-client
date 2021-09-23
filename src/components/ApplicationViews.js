@@ -4,10 +4,8 @@ import { LotProvider } from "./lot/LotProvider";
 import { LotNoteProvider } from "./note/LotNoteProvider";
 import { ProjectNoteProvider } from "./note/ProjectNoteProvider";
 import { ProjectProvider } from "./project/ProjectProvider";
-import { ProjectList } from "./project/ProjectList";
 import { ProjectDetail } from "./project/ProjectDetail";
 import { LotList } from "./lot/LotList";
-import { NoteList } from "./note/NoteList";
 import { LotDetail } from "./lot/LotDetail";
 import { LotForm } from "./lot/LotForm";
 import { ProjectForm } from "./project/ProjectForm";
@@ -42,9 +40,6 @@ export const ApplicationViews = () => {
           <Route exact path="/projects/edit/:projectId(\d+)">
             <ProjectForm />
           </Route>
-          <Route exact path="/projects">
-            <ProjectList />
-          </Route>
 
           <Route exact path="/lots/edit/:lotId(\d+)">          
              {/* the (/d+) means to only capture if its a decimal  */}
@@ -52,16 +47,12 @@ export const ApplicationViews = () => {
           </Route>
 
 
-          <Route exact path="/notes">
-            <NoteList />
-          </Route>
 
-
-          <Route exact path="/notes/lot/create/:lotId(\d+)">
+          <Route exact path="/lotnotes/create/:lotId(\d+)">
             <LotNoteForm />
           </Route>
 
-          <Route path="/notes/edit/:lotNoteId(\d+)">
+          <Route path="/lotnotes/edit/:lotNoteId(\d+)">
             <LotNoteForm />
           </Route>
 

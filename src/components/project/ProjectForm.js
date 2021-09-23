@@ -53,17 +53,6 @@ export const ProjectForm = () => {
     }
   }
 
-  // Populates the forms with existing data if there is any
-  /* useEffect(() => {
-    getLots().then(() => {
-      if (lotId){
-        getProjectById(lotId)
-        .then(project => {
-            setProject(project)          
-        })
-      }
-    })
-  }, []) */
 
   useEffect(() => {
     if (projectId) {

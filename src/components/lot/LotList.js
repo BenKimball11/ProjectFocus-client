@@ -22,7 +22,7 @@ export const LotList = () => {
 
   return (
     <>
-      <div className="vehicleHeader">
+      <div className="lotHeader">
         <h1>Lots</h1>
 
       </div>

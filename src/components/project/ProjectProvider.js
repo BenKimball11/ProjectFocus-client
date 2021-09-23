@@ -16,7 +16,7 @@ export const ProjectProvider = (props) => {
 				Authorization: `Token ${localStorage.getItem("PF_token")}`,
 			},
 		})
-			.then((response) => response.json())
+			.then((response) => response.json()) //converts that data into json
 			.then(setProjects);
 	};
 

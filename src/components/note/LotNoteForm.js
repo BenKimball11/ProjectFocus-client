@@ -7,7 +7,7 @@ import { Button } from 'reactstrap';
 
 
 export const LotNoteForm = () => {
-    const { addNote, getLotNoteById, updateLotNote } = useContext(LotNoteContext);
+    const { addLotNote, getLotNoteById, updateLotNote } = useContext(LotNoteContext);
     const { lots, getLots } = useContext(LotContext);
     /* useState declares the default state of the functions.
     First thing in the array (vehicle) is always the current state
@@ -35,18 +35,18 @@ export const LotNoteForm = () => {
 
       if (lotNoteId){
         updateLotNote({
-          id: parseInt(lotNote.id),
+          id: lotNote.id,
           //user: parseInt(user),
-          lotId:parseInt(lotNote.lotId),
+          //lotId: parseInt(lotNote.lotId),
           name: lotNote.name,
           date: lotNote.date,
           itemsReceived: lotNote.itemsReceived,
           description: lotNote.description,
           contactNumber: parseInt(lotNote.contactNumber),
         })
-        .then(() => history.push(`/lots/edit/${lotNote.lot.id}`))
+        .then(() => history.push(`/lots`))
       }else{ 
-        addNote({
+        addLotNote({
           //user: parseInt(user),
           lotId: parseInt(lotId),
           name: lotNote.name,

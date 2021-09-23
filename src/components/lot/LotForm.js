@@ -53,7 +53,7 @@ export const LotForm = () => {
       }
     }
 
-    // Get customers and locations. If VehicleId is in the URL, getVehicleById
+    // Get customers and locations. If lotId is in the URL, getLotById
     useEffect(() => {
         if (lotId) {
           getLotById(lotId)
@@ -61,7 +61,7 @@ export const LotForm = () => {
               setLot(lot)
             })
           }   
-      }, [])// this array is empty is because the vehicle doesnt exist yet
+      }, [])// this array is empty is because the lot doesnt exist yet
             // the empty array on the useEffect runs on page load. If there is nothing to watch, then it just runs the function inside it.
 
     //since state controlls this component, we no longer need
